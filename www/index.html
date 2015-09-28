@@ -41,9 +41,19 @@
             <div id="deviceready" class="blink">
                 <p class="event listening">Connecting to Device</p>
                 <p class="event received">Device is Ready</p>
+                <button onClick="activarServicio();">prender servicio</button>
             </div>
+            
         </div>
         <script type="text/javascript" src="cordova.js"></script>
         <script type="text/javascript" src="js/index.js"></script>
+        <script>
+			function activarServicio(){
+				window.plugins.atalandaGPSTracker.configure({
+				  url: "http://200.58.108.122/gis/ws/transporteurbano/tracking"
+				});
+				window.plugins.atalandaGPSTracker.startTracking();
+			}
+		</script>
     </body>
 </html>
